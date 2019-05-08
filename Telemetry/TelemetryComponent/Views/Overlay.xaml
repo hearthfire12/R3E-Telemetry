@@ -1,0 +1,72 @@
+﻿<Window x:Class="TelemetryComponent.Views.Overlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Overlay"
+        AllowsTransparency="True" Topmost="True" 
+        ShowInTaskbar="False" IsTabStop="True"
+        WindowStyle="None" 
+        WindowState="Maximized"
+        WindowStartupLocation="Manual"
+        Background="Transparent">
+    
+    <Window.Resources>
+        <Storyboard x:Key="Blink">
+            <DoubleAnimation BeginTime="0:0:0.0" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.3"/>
+            <DoubleAnimation BeginTime="0:0:2.0" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5"/>
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="Info"
+                   Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="0"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   TextAlignment="Center" FontSize="26" Foreground="LightGray"></TextBlock>
+        
+        <TextBlock x:Name="Warning"
+                   Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="5"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   TextAlignment="Center" FontSize="26" Foreground="Red"></TextBlock>
+        
+        <TextBlock x:Name="TimeDelta"
+                   Grid.ColumnSpan="2" Grid.Column="3" Grid.Row="2"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   TextAlignment="Center" FontSize="26" Foreground="White"></TextBlock>
+        
+        <TextBlock x:Name="FL"
+                   Grid.Column="0" Grid.Row="4"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   TextAlignment="Center" FontSize="26"></TextBlock>
+        <TextBlock x:Name="FR"
+                   Grid.Column="5" Grid.Row="4"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   TextAlignment="Center" FontSize="26"></TextBlock>
+        <TextBlock x:Name="RL"
+                   Grid.Column="1" Grid.Row="5"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   TextAlignment="Center" FontSize="26"></TextBlock>
+        <TextBlock x:Name="RR"
+                   Grid.Column="4" Grid.Row="5"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   TextAlignment="Center" FontSize="26"></TextBlock>
+    </Grid>
+</Window>
