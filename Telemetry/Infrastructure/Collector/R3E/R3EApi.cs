@@ -192,7 +192,7 @@ namespace Infrastructure.Collector.R3E
     namespace Infrastructure.Collector.R3E.Data
     {
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct RaceDuration<T>
+        internal struct RaceDuration<T>
         {
             public T Race1;
             public T Race2;
@@ -200,7 +200,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct Vector3<T>
+        internal struct Vector3<T>
         {
             public T X;
             public T Y;
@@ -208,7 +208,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct Orientation<T>
+        internal struct Orientation<T>
         {
             public T Pitch;
             public T Yaw;
@@ -216,7 +216,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct SectorStarts<T>
+        internal struct SectorStarts<T>
         {
             public T Sector1;
             public T Sector2;
@@ -224,7 +224,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct PlayerData
+        internal struct PlayerData
         {
             // Virtual physics time
             // Unit: Ticks (1 tick = 1/400th of a second)
@@ -308,7 +308,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct Flags
+        internal struct Flags
         {
             // Whether yellow flag is currently active
             // -1 = no data
@@ -382,7 +382,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct CarDamage
+        internal struct CarDamage
         {
             // Range: 0.0 - 1.0
             // Note: -1.0 = N/A
@@ -407,7 +407,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct TireData<T>
+        internal struct TireData<T>
         {
             public T FrontLeft;
             public T FrontRight;
@@ -416,7 +416,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct PitMenuState
+        internal struct PitMenuState
         {
             // Pit menu preset
             public Int32 Preset;
@@ -437,7 +437,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct CutTrackPenalties
+        internal struct CutTrackPenalties
         {
             public Int32 DriveThrough;
             public Int32 StopAndGo;
@@ -447,7 +447,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct DRS
+        internal struct DRS
         {
             // If DRS is equipped and allowed
             // 0 = No, 1 = Yes, -1 = N/A
@@ -468,7 +468,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct PushToPass
+        internal struct PushToPass
         {
             public Int32 Available;
             public Int32 Engaged;
@@ -478,7 +478,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct TireTempInformation
+        internal struct TireTempInformation
         {
             public TireTemperature<Single> CurrentTemp;
             public Single OptimalTemp;
@@ -487,7 +487,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct BrakeTemp
+        internal struct BrakeTemp
         {
             public Single CurrentTemp;
             public Single OptimalTemp;
@@ -496,7 +496,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct TireTemperature<T>
+        internal struct TireTemperature<T>
         {
             public T Left;
             public T Center;
@@ -504,7 +504,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct AidSettings
+        internal struct AidSettings
         {
             // ABS; -1 = N/A, 0 = off, 1 = on, 5 = currently active
             public Int32 Abs;
@@ -523,7 +523,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct Sectors<T>
+        internal struct Sectors<T>
         {
             public T Sector1;
             public T Sector2;
@@ -531,7 +531,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct DriverInfo
+        internal struct DriverInfo
         {
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]
             public byte[] Name; // UTF-8
@@ -555,7 +555,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct DriverData
+        internal struct DriverData
         {
             public DriverInfo DriverInfo;
 
@@ -668,7 +668,7 @@ namespace Infrastructure.Collector.R3E
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public struct Shared
+        internal struct Shared
         {
             //////////////////////////////////////////////////////////////////////////
             // Version
